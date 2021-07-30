@@ -6,14 +6,7 @@ node {
       checkout([$class: 'GitSCM', branches: [[name: "*/${branch}"]], extensions: [], userRemoteConfigs: [[credentialsId: "${git_auth}", url: "${git_url}"]]])
       
    }
-   stage('代码审查') {
-      def scannerHome = tool 'sonar-scanner'
-      withSonarQubeEnv('sonarqube') {
-            sh """
-                  cd ${project_name}
-                  ${scannerHome}/bin/sonar-scanner
-               """
-}
+   
       stage("编译、安装公共子工程"){
          sh "mvn -f tensquare_common clean install"
       }
