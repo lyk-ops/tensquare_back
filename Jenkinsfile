@@ -18,3 +18,4 @@ node {
          sh "mvn -f tensquare_common clean install"
       }
 }
+}
