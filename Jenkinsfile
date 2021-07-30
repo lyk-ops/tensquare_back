@@ -10,5 +10,5 @@ node {
       stage("编译、安装公共子工程"){
          sh "mvn -f tensquare_common clean install"
       }
-}
+
 }
