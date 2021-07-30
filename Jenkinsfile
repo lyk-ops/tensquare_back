@@ -7,7 +7,7 @@ node {
       
    }
    stage('代码审查') {
-      def scannerHome = tool 'sonarqube-scanner'
+      def scannerHome = tool 'sonar-scanner'
       withSonarQubeEnv('sonarqube') {
             sh """
                   cd ${project_name}
